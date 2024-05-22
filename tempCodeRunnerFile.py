@@ -1,4 +1,4 @@
-import pygame
+me
 import sys
 from Snaky import Snake, Food
 
@@ -52,27 +52,4 @@ while True:
 
     # Check for game over
     if snake.collides_with_self() or snake.collides_with_boundary():
-        snake.health -= 10
-        if snake.health <= 0:
-            snake.game_over(screen)
-            pygame.quit()
-            sys.exit()
-        else:
-            snake.body = [(GRID_WIDTH // 2, GRID_HEIGHT // 2)]
-            snake.direction = (0, -1)
-    else:
-        new_head = (snake.body[0][0] + snake.direction[0], snake.body[0][1] + snake.direction[1])
-        snake.body.insert(0, new_head)
-        snake.body.pop()
-
-
-    # Draw everything
-    screen.fill((255, 255, 255))
-    snake.draw(screen)
-    food.draw(screen)
-    snake.life_bar(screen)
-
-    pygame.display.flip()
-
-    # Wait for next frame
-    clock.tick(10)
+        while snake.health > 0
